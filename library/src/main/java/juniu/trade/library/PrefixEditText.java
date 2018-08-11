@@ -71,16 +71,20 @@ public class PrefixEditText extends AppCompatEditText {
 
     /**
      * 设置文字（当内容为0的时候会置""）
+     *
      * @param str
      */
-    public void setTextZero(String str){
-        if(TextUtils.isEmpty(str)){
+    public void setTextZero(String str) {
+        if (TextUtils.isEmpty(str)) {
             setText("");
-        }else {
-            if("0".equals(str)){
+            return;
+        } else {
+            if ("0".equals(str)) {
                 setText("");
+                return;
             }
         }
+        setText(str);
     }
 
     /**
