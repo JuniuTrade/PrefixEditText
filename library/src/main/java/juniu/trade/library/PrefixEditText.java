@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.widget.TextView;
 
 /**
  * @author lyd
@@ -68,7 +69,19 @@ public class PrefixEditText extends AppCompatEditText {
         drawPrefix();
     }
 
-
+    /**
+     * 设置文字（当内容为0的时候会置""）
+     * @param str
+     */
+    public void setTextZero(String str){
+        if(TextUtils.isEmpty(str)){
+            setText("");
+        }else {
+            if("0".equals(str)){
+                setText("");
+            }
+        }
+    }
 
     /**
      * 绘制
